@@ -1,0 +1,213 @@
+@font-face {
+    font-family: 'Manrope';
+    src: url(./assets/Manrope-Regular.ttf);
+}
+
+:root{
+    --color-primary: #FFF;
+    --color-secondary: #000;
+    --color-tertiary: #797979;
+    --color-pagination: #FFB546;
+    --radius-1: 16px;
+    --radius-2: 50%;
+    --font-text: "Manrope";
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+}
+
+#reviews{
+    padding: 100px 0;
+    width: 100%;
+    border: solid 1px black;
+    overflow: hidden;
+    position: relative;
+
+    .img-bg{
+        width: 100%;
+        background: url(./assets/reviews-bg-img.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 100%;
+        padding: 88px 0 103px 0;
+        display: flex;
+        position: relative;
+
+        .img-bg-mobile{display: block;}
+
+        .swiper {
+            width: 64%;
+            .swiper-wrapper{
+                height: max-content;
+                .swiper-slide {
+                    margin-top: 70px;
+                    padding: 0 45px 50px 45px;
+                    width: 354px;
+                    background: var(--color-primary);
+                    border-radius: var(--radius-1);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    row-gap: 34px;
+                    font-family: var(--font-text);
+                    
+    
+                    &:nth-child(1){.img{background: url(./assets/reviews-img1.jpg);}}
+                    &:nth-child(2){.img{background: url(./assets/reviews-img2.jpg);}}
+                    &:nth-child(3){.img{background: url(./assets/reviews-img3.jpg);}}
+                    &:nth-child(4){.img{background: url(./assets/reviews-img1.jpg);}}
+                    &:nth-child(5){.img{background: url(./assets/reviews-img2.jpg);}}
+    
+                    .img{
+                        width: 130px;
+                        height: 130px;
+                        border: solid 3px var(--color-primary);
+                        border-radius: var(--radius-2);
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: 50%;
+                        position: absolute;
+                        transform: translateY(-50%);
+                        
+                    }
+    
+                    h4{
+                        margin-top: 100px;
+                        color: var(--color-secondary);
+                        text-align: center;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        line-height: 140%; /* 33.6px */
+                    }
+    
+                    p{
+                        color: var(--color-tertiary);
+                        text-align: center;
+                        font-size: 1.125rem;
+                        font-weight: 400;
+                        line-height: 170%; /* 30.6px */
+                    }
+    
+                }
+            }
+        }
+
+        .swiper-button-next, .swiper-button-prev{
+            width: 60px;
+            height: 60px;
+            --swiper-navigation-size: 0px;
+            --swiper-navigation-top-offset: 50%;
+            transform: translateY(-50%);
+            --swiper-navigation-sides-offset: 0px;
+        }
+
+        .swiper-button-next{right: 12.6%;}
+        .swiper-button-prev{left: 12.6%;}
+        .swiper-pagination{display: none;}
+    }
+
+    @media screen and (max-width: 1550px) {
+        .img-bg{
+            background: url(./assets/reviews-bg-img2.png);
+            background-size: cover;
+            background-position: 100%;
+        }
+    }
+
+    @media screen and (max-width: 1400px) {
+        .img-bg{
+            background: url(./assets/reviews-bg-img2.png);
+            background-size: cover;
+            background-position: 100%;
+
+            .swiper {width: 80%;}
+            .swiper-button-next{right: 3%;}
+            .swiper-button-prev{left: 3%;}
+        }
+    }
+
+    @media screen and (max-width: 1150px) {
+        .img-bg{
+            .swiper {
+                .swiper-wrapper{
+                    .swiper-slide {
+                        padding: 0 45px 20px 45px;
+                        row-gap: 20px;
+                        h4{margin-top: 70px;}
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .img-bg{
+            padding: 112px 0;
+            background: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            row-gap: 30px;
+            .img-bg-mobile{
+                position: absolute;
+                left: 0;
+                width: 55%;
+                height: 100%;
+                //height: calc(100% + 88px);
+                margin-top: -112px;
+                background: url(./assets/reviews-bg-img2.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 100%;
+            }
+
+            .swiper {
+                width: 365px;
+                
+                //left: 50%;
+                padding: 0 6px 6px 6px;
+                .swiper-wrapper{
+                    .swiper-slide {
+                        width: 100%;
+                        padding: 0 45px 50px 45px;
+                        row-gap: 34px;
+                        box-shadow: 4px 4px 6px 0px rgba(0, 0, 0, 0.07);
+                        h4{margin-top: 85px;}
+                    }
+                }
+            }
+            .swiper-button-next, .swiper-button-prev{display: none;}
+            .swiper-pagination{
+                display: block;
+                display: flex;
+                justify-content: end;
+                --swiper-pagination-color: var(--color-pagination);
+                --swiper-pagination-bullet-size: 12px;
+                width: 353px;
+                position: relative;
+            }
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .img-bg{
+            .img-bg-mobile{width: 65%;}
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .img-bg{
+            padding: 112px 30px;
+            .img-bg-mobile{width: 65%;}
+            .swiper {width: 100%;}
+            .swiper-pagination{width: 100%;}
+        }
+    }
+}
